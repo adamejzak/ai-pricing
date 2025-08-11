@@ -1,5 +1,29 @@
 {
   "models": {
+    "gpt-5": {
+      "input": 1.25,
+      "cachedInput": 0.125,
+      "output": 10,
+      "batchDiscount": 0.5
+    },
+    "gpt-5-mini": {
+      "input": 0.25,
+      "cachedInput": 0.025,
+      "output": 2,
+      "batchDiscount": 0.5
+    },
+    "gpt-5-nano": {
+      "input": 0.05,
+      "cachedInput": 0.005,
+      "output": 0.4,
+      "batchDiscount": 0.5
+    },
+    "gpt-5-chat-latest": {
+      "input": 1.25,
+      "cachedInput": 0.125,
+      "output": 10,
+      "batchDiscount": 0.5
+    },
     "o4-mini": {
       "input": 1.1,
       "cachedInput": 0.275,
@@ -35,6 +59,11 @@
       "output": 10,
       "batchDiscount": 0.5
     },
+    "gpt-4o-2024-05-13": {
+      "input": 5,
+      "output": 15,
+      "batchDiscount": 0.5
+    },
     "gpt-4o-audio-preview": {
       "input": 2.5,
       "output": 10
@@ -67,12 +96,24 @@
     },
     "o1-pro": {
       "input": 150,
-      "output": 600
+      "output": 600,
+      "batchDiscount": 0.5
     },
     "o3": {
+      "input": 2,
+      "cachedInput": 0.5,
+      "output": 8,
+      "batchDiscount": 0.5
+    },
+    "o3-pro": {
+      "input": 20,
+      "output": 80
+    },
+    "o3-deep-research": {
       "input": 10,
       "cachedInput": 2.5,
-      "output": 40
+      "output": 40,
+      "batchDiscount": 0.5
     },
     "o3-mini": {
       "input": 1.1,
@@ -84,6 +125,12 @@
       "input": 1.1,
       "cachedInput": 0.55,
       "output": 4.4,
+      "batchDiscount": 0.5
+    },
+    "o4-mini-deep-research": {
+      "input": 2,
+      "cachedInput": 0.5,
+      "output": 8,
       "batchDiscount": 0.5
     },
     "codex-mini-latest": {
@@ -146,15 +193,42 @@
     }
   },
   "flex-processing": {
+    "gpt-5": {
+      "input": 0.625,
+      "cachedInput": 0.0625,
+      "output": 5
+    },
+    "gpt-5-mini": {
+      "input": 0.125,
+      "cachedInput": 0.0125,
+      "output": 1
+    },
+    "gpt-5-nano": {
+      "input": 0.025,
+      "cachedInput": 0.0025,
+      "output": 0.2
+    },
     "o3": {
-      "input": 5,
-      "cachedInput": 1.25,
-      "output": 20
+      "input": 1,
+      "cachedInput": 0.25,
+      "output": 4
     },
     "o4-mini": {
       "input": 0.55,
       "cachedInput": 0.138,
       "output": 2.2
+    }
+  },
+  "priority-processing": {
+    "gpt-5": {
+      "input": 2.5,
+      "cachedInput": 0.25,
+      "output": 20
+    },
+    "gpt-5-mini": {
+      "input": 0.45,
+      "cachedInput": 0.05,
+      "output": 3.6
     }
   },
   "audio-tokens": {
@@ -254,36 +328,24 @@
       "cost": 2.5
     },
     "web-search": {
-      "gpt-4.1": {
-        "low": 30,
-        "medium": 35,
-        "high": 50
-      },
-      "gpt-4o": {
-        "low": 30,
-        "medium": 35,
-        "high": 50
-      },
-      "gpt-4o-search-preview": {
-        "low": 30,
-        "medium": 35,
-        "high": 50
-      },
-      "gpt-4.1-mini": {
-        "low": 25,
-        "medium": 27.5,
-        "high": 30
-      },
-      "gpt-4o-mini": {
-        "low": 25,
-        "medium": 27.5,
-        "high": 30
-      },
-      "gpt-4o-mini-search-preview": {
-        "low": 25,
-        "medium": 27.5,
-        "high": 30
-      }
+      "gpt-4.1": 25,
+      "gpt-4o": 25,
+      "gpt-4o-search-preview": 25,
+      "gpt-4.1-mini": 25,
+      "gpt-4o-mini": 25,
+      "gpt-4o-mini-search-preview": 25,
+      "gpt-5": 10,
+      "gpt-5-mini": 10,
+      "gpt-5-nano": 10,
+      "o1": 10,
+      "o1-pro": 10,
+      "o1-mini": 10,
+      "o3": 10,
+      "o3-pro": 10,
+      "o3-mini": 10,
+      "o3-deep-research": 10,
+      "o4-mini": 10,
+      "o4-mini-deep-research": 10
     }
   },
   "transcription_speech": {
@@ -319,9 +381,14 @@
     }
   },
   "embedding": {
-    "text-embedding-3-small": 0.02,
-    "text-embedding-3-large": 0.13,
-    "text-embedding-ada-002": 0.1
+    "text-embedding-3-small": 0.01,
+    "text-embedding-3-large": 0.065,
+    "text-embedding-ada-002": 0.05
+  },
+  "embedding-batch": {
+    "text-embedding-3-small": 0.0001,
+    "text-embedding-3-large": 0.00013,
+    "text-embedding-ada-002": 0.0004
   },
   "image": {
     "gpt-image-1": {
