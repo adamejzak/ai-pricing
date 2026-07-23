@@ -546,5 +546,17 @@
     "whisper": 0.006,
     "tts": 15,
     "tts-hd": 30
+  },
+  "video": {
+    "sora-2": {
+      "720p": 0.1,
+      "batchDiscount": 0.5
+    },
+    "sora-2-pro": {
+      "720p": 0.3,
+      "1024p": 0.5,
+      "1080p": 0.7,
+      "batchDiscount": 0.5
+    }
   }
 }
