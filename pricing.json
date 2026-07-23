@@ -217,6 +217,11 @@
       "input": 5,
       "cachedInput": 1.25
     },
+    "gpt-image-2": {
+      "input": 5,
+      "cachedInput": 1.25,
+      "output": 30
+    },
     "chatgpt-4o-latest": {
       "input": 5,
       "output": 15
@@ -363,6 +368,11 @@
       "input": 10,
       "cachedInput": 2.5,
       "output": 40
+    },
+    "gpt-image-2": {
+      "input": 8,
+      "cachedInput": 2,
+      "output": 30
     }
   },
   "fine-tuning": {
