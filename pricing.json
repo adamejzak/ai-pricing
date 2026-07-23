@@ -1,5 +1,23 @@
 {
   "models": {
+    "gpt-5.6-sol": {
+      "input": 5,
+      "cachedInput": 0.5,
+      "output": 30,
+      "batchDiscount": 0.5
+    },
+    "gpt-5.6-terra": {
+      "input": 2.5,
+      "cachedInput": 0.25,
+      "output": 15,
+      "batchDiscount": 0.5
+    },
+    "gpt-5.6-luna": {
+      "input": 1,
+      "cachedInput": 0.1,
+      "output": 6,
+      "batchDiscount": 0.5
+    },
     "gpt-5": {
       "input": 1.25,
       "cachedInput": 0.125,
@@ -193,6 +211,21 @@
     }
   },
   "flex-processing": {
+    "gpt-5.6-sol": {
+      "input": 2.5,
+      "cachedInput": 0.25,
+      "output": 15
+    },
+    "gpt-5.6-terra": {
+      "input": 1.25,
+      "cachedInput": 0.125,
+      "output": 7.5
+    },
+    "gpt-5.6-luna": {
+      "input": 0.5,
+      "cachedInput": 0.05,
+      "output": 3
+    },
     "gpt-5": {
       "input": 0.625,
       "cachedInput": 0.0625,
@@ -328,6 +361,9 @@
       "cost": 2.5
     },
     "web-search": {
+      "gpt-5.6-sol": 10,
+      "gpt-5.6-terra": 10,
+      "gpt-5.6-luna": 10,
       "gpt-4.1": 25,
       "gpt-4o": 25,
       "gpt-4o-search-preview": 25,
