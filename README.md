@@ -1,6 +1,6 @@
 # OpenAI Pricing
 
-Up-to-date pricing structure for OpenAI APIs as of **July 23, 2026**.
+Up-to-date pricing structure for OpenAI APIs as of **July 30, 2026**.
 
 This repository provides structured JSON data (`pricing.json`) for OpenAI model costs to help developers estimate API usage costs within their applications.
 
@@ -8,7 +8,7 @@ Pricing source information is sourced from official OpenAI API documentation: [h
 
 ---
 
-## 📅 Status (as of 23.07.2026)
+## 📅 Status (as of 30.07.2026)
 
 All retired and deprecated legacy endpoints (such as `o1-mini`, `gpt-4.5-preview`, `davinci-002`, `babbage-002`) have been removed.
 
@@ -16,8 +16,8 @@ All retired and deprecated legacy endpoints (such as `o1-mini`, `gpt-4.5-preview
 
 - **GPT-5.6 Series (July 2026 Flagships)**:
   - `gpt-5.6-sol` - Flagship reasoning & coding workhorse ($5.00 / 1M input, $30.00 / 1M output)
-  - `gpt-5.6-terra` - Balanced production model ($2.50 / 1M input, $15.00 / 1M output)
-  - `gpt-5.6-luna` - Fast & low-latency tier ($1.00 / 1M input, $6.00 / 1M output)
+  - `gpt-5.6-terra` - Balanced production model ($2.00 / 1M input, $12.00 / 1M output)
+  - `gpt-5.6-luna` - Fast & low-latency tier ($0.20 / 1M input, $1.20 / 1M output)
 - **GPT-5.5 & GPT-5.4 Series**:
   - `gpt-5.5`, `gpt-5.5-pro`
   - `gpt-5.4`, `gpt-5.4-pro`, `gpt-5.4-mini`, `gpt-5.4-nano`
