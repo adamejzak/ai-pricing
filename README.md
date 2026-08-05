@@ -28,7 +28,7 @@ Standard first-party API rates in USD per 1 million tokens:
 | Anthropic | `claude-fable-5` | Flagship | 1M | $10.00 | $1.00 | $50.00 |
 | Anthropic | `claude-opus-5` | Flagship | 1M | $5.00 | $0.50 | $25.00 |
 | Anthropic | `claude-sonnet-5` | General | 1M | $2.00 | $0.20 | $10.00 |
-| Google | `gemini-3.1-pro-preview` | Flagship preview | 1,048,576 | $2.00 | $0.20 | $12.00 |
+| Google | `gemini-3.1-pro` | Flagship | 2,097,152 | $2.00 | $0.20 | $12.00 |
 | Google | `gemini-3.6-flash` | Fast | 1,048,576 | $1.50 | $0.15 | $7.50 |
 | DeepSeek | `deepseek-v4-pro` | Flagship | 1M | $0.435 | $0.003625 | $0.87 |
 | DeepSeek | `deepseek-v4-flash` | Fast | 1M | $0.14 | $0.0028 | $0.28 |
@@ -39,7 +39,7 @@ Standard first-party API rates in USD per 1 million tokens:
 The table shows base rates. The dashboard calculator and JSON metadata also apply these published long-context tiers:
 
 - OpenAI requests to GPT-5.6, GPT-5.5, GPT-5.4, and GPT-5.4 Pro with more than 272k input tokens use the provider's long-context multiplier: 2× input and 1.5× output for the full request.
-- The Gemini 3.1 Pro Preview rates shown above apply to prompts up to 200k tokens. Above 200k, the rates are $4.00 input, $0.40 cached input, and $18.00 output.
+- The Gemini 3.1 Pro rates shown above apply to prompts up to 200k tokens. Above 200k, the rates are $4.00 input, $0.40 cached input, and $18.00 output.
 - Claude Sonnet 5 uses introductory $2.00/$10.00 input/output pricing through August 31, 2026; Anthropic lists $3.00/$15.00 from September 1, 2026.
 - Cached-input fields represent cache reads/hits. Provider-specific cache-write and cache-storage charges are not included.
 
