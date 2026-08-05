@@ -4,16 +4,16 @@ Machine-readable pricing data and an interactive cost calculator for major AI AP
 
 The repository tracks 55 current pay-as-you-go API entries from **OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral AI, and Kimi**. Token-priced models use USD per 1 million tokens; audio, transcription, speech, image, and other specialist models retain their official billing unit.
 
-## Interactive dashboard
+## 🚀 Interactive Live Web Dashboard
 
-Open [`index.html`](index.html) directly or serve the repository with any static web server. The dashboard provides:
+Explore and compare AI API pricing in real time on the live interactive web dashboard:
+👉 **[https://adamejzak.github.io/openai-pricing/](https://adamejzak.github.io/openai-pricing/)**
 
-- request-cost estimates from input and output token counts for token-priced models;
-- optional cached-input pricing;
-- provider, category, and search filters;
-- grid and table views with model context windows.
-
-When `pricing.json` cannot be fetched under the local `file://` protocol, the page uses an equivalent fallback dataset embedded in `app.js`.
+Features:
+- **Collapsible Token Cost Calculator**: Enter custom input/output token amounts to compare exact request costs across models.
+- **Provider & Category Filters**: Filter by OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral, and Kimi.
+- **Grid & Table Views**: View side-by-side pricing, context window limits, and cached prompt discounts.
+- **Local offline support**: You can also open [`index.html`](index.html) directly in your browser.
 
 ## Current model comparison
 

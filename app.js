@@ -169,6 +169,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   const modelCountEl = document.getElementById('model-count');
   const topResultEl = document.getElementById('calculator-top-result');
 
+  // Toggle Calculator Visibility
+  const toggleCalcBtn = document.getElementById('toggle-calc-btn');
+  const calcBody = document.getElementById('calculator-body');
+  const calcHeader = document.querySelector('.calculator-header');
+
+  if (toggleCalcBtn && calcBody) {
+    toggleCalcBtn.addEventListener('click', () => {
+      const isHidden = calcBody.classList.toggle('hidden');
+      if (calcHeader) calcHeader.classList.toggle('collapsed', isHidden);
+      toggleCalcBtn.textContent = isHidden ? '[+] Show Calculator' : '[-] Hide';
+    });
+  }
+
   // Event Listeners for Calculator
   promptInput.addEventListener('input', updateView);
   outputInput.addEventListener('input', updateView);

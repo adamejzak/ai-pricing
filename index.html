@@ -36,44 +36,49 @@
     <!-- Calculator Section -->
     <section class="calculator-card">
       <div class="calculator-header">
-        <div class="calc-icon">[&gt;]</div>
-        <div>
-          <h2>Token Cost Calculator</h2>
-          <p>Calculate and compare request costs across model providers.</p>
+        <div class="header-title">
+          <div class="calc-icon">[&gt;]</div>
+          <div>
+            <h2>Token Cost Calculator</h2>
+            <p>Calculate and compare request costs across model providers.</p>
+          </div>
         </div>
+        <button id="toggle-calc-btn" class="btn-toggle-calc">[-] Hide</button>
       </div>
 
-      <div class="calc-inputs">
-        <div class="input-group">
-          <label for="prompt-tokens">Prompt / Input Tokens</label>
-          <div class="input-wrapper">
-            <input type="number" id="prompt-tokens" value="50000" min="0" step="1000">
-            <span class="unit">tokens</span>
+      <div id="calculator-body">
+        <div class="calc-inputs">
+          <div class="input-group">
+            <label for="prompt-tokens">Prompt / Input Tokens</label>
+            <div class="input-wrapper">
+              <input type="number" id="prompt-tokens" value="50000" min="0" step="1000">
+              <span class="unit">tokens</span>
+            </div>
+            <span class="preset-label">Quick select: 
+              <button class="btn-preset" data-input="10000" data-output="2000">10k in / 2k out</button>
+              <button class="btn-preset" data-input="50000" data-output="10000">50k in / 10k out</button>
+              <button class="btn-preset" data-input="200000" data-output="50000">200k in / 50k out</button>
+            </span>
           </div>
-          <span class="preset-label">Quick select: 
-            <button class="btn-preset" data-input="10000" data-output="2000">10k in / 2k out</button>
-            <button class="btn-preset" data-input="50000" data-output="10000">50k in / 10k out</button>
-            <button class="btn-preset" data-input="200000" data-output="50000">200k in / 50k out</button>
-          </span>
+
+          <div class="input-group">
+            <label for="output-tokens">Completion / Output Tokens</label>
+            <div class="input-wrapper">
+              <input type="number" id="output-tokens" value="10000" min="0" step="500">
+              <span class="unit">tokens</span>
+            </div>
+            <div class="toggle-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="use-cache">
+                <span>Use Cached Prompt Rate</span>
+              </label>
+            </div>
+          </div>
         </div>
 
-        <div class="input-group">
-          <label for="output-tokens">Completion / Output Tokens</label>
-          <div class="input-wrapper">
-            <input type="number" id="output-tokens" value="10000" min="0" step="500">
-            <span class="unit">tokens</span>
-          </div>
-          <div class="toggle-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="use-cache">
-              <span>Use Cached Prompt Rate</span>
-            </label>
-          </div>
+        <div class="calc-results-preview" id="calculator-top-result">
+          <!-- Injected via JS -->
         </div>
-      </div>
-
-      <div class="calc-results-preview" id="calculator-top-result">
-        <!-- Injected via JS -->
       </div>
     </section>
 
