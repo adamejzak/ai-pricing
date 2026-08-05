@@ -7,7 +7,7 @@ The repository tracks 55 current pay-as-you-go API entries from **OpenAI, Anthro
 ## 🚀 Interactive Live Web Dashboard
 
 Explore and compare AI API pricing in real time on the live interactive web dashboard:
-👉 **[https://adamejzak.github.io/openai-pricing/](https://adamejzak.github.io/openai-pricing/)**
+👉 **[https://adamejzak.github.io/ai-pricing/](https://adamejzak.github.io/ai-pricing/)**
 
 Features:
 - **Collapsible Token Cost Calculator**: Enter custom input/output token amounts to compare exact request costs across models.
@@ -72,7 +72,7 @@ Every provider file contains `currency`, `unit`, `updatedAt`, and a `models` obj
 
 ```javascript
 const response = await fetch(
-  'https://raw.githubusercontent.com/adamejzak/openai-pricing/main/pricing.json'
+  'https://raw.githubusercontent.com/adamejzak/ai-pricing/main/pricing.json'
 );
 const data = await response.json();
 
@@ -85,7 +85,7 @@ console.log(`Kimi K3 input: $${kimiK3.input} / 1M tokens`);
 ```python
 import requests
 
-url = "https://raw.githubusercontent.com/adamejzak/openai-pricing/main/pricing.json"
+url = "https://raw.githubusercontent.com/adamejzak/ai-pricing/main/pricing.json"
 data = requests.get(url).json()
 
 deepseek_v4 = data["providers"]["deepseek"]["models"]["deepseek-v4-pro"]
