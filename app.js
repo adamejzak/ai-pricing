@@ -312,6 +312,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Render Calculator Top Results
     renderTopResults(filtered);
 
+    // Render Side-by-Side Comparator
+    renderComparator(promptTokens, outputTokens, useCache);
+
     // Render Grid
     renderGrid(filtered);
 
@@ -397,6 +400,116 @@ document.addEventListener('DOMContentLoaded', async () => {
         <td class="mono" style="color: #34d399; font-weight: 700;">${formatCurrency(m.currentCost)}</td>
       </tr>
     `).join('');
+  }
+
+  // Toggle Comparator Visibility
+  const toggleCompBtn = document.getElementById('toggle-comparator-btn');
+  const compBody = document.getElementById('comparator-body');
+  const compHeader = toggleCompBtn ? toggleCompBtn.closest('.calculator-header') : null;
+
+  if (toggleCompBtn && compBody) {
+    toggleCompBtn.addEventListener('click', () => {
+      const isHidden = compBody.classList.toggle('hidden');
+      if (compHeader) compHeader.classList.toggle('collapsed', isHidden);
+      toggleCompBtn.textContent = isHidden ? '[+] Show Comparator' : '[-] Hide';
+    });
+  }
+
+  // Populate Comparator Selects
+  const selectModelA = document.getElementById('select-model-a');
+  const selectModelB = document.getElementById('select-model-b');
+  const compResultsEl = document.getElementById('comparator-results');
+
+  if (selectModelA && selectModelB) {
+    const optionsHtml = allModels.map(m => `<option value="${m.id}">${m.providerName} - ${m.name}</option>`).join('');
+    selectModelA.innerHTML = optionsHtml;
+    selectModelB.innerHTML = optionsHtml;
+
+    // Set smart default selections
+    if (allModels.find(m => m.id === 'gpt-4o')) selectModelA.value = 'gpt-4o';
+    else if (allModels.length > 0) selectModelA.value = allModels[0].id;
+
+    if (allModels.find(m => m.id === 'gemini-3.1-pro')) selectModelB.value = 'gemini-3.1-pro';
+    else if (allModels.find(m => m.id === 'claude-fable-5')) selectModelB.value = 'claude-fable-5';
+    else if (allModels.length > 1) selectModelB.value = allModels[1].id;
+
+    selectModelA.addEventListener('change', updateView);
+    selectModelB.addEventListener('change', updateView);
+  }
+
+  function renderComparator(promptTokens, outputTokens, useCache) {
+    if (!selectModelA || !selectModelB || !compResultsEl) return;
+
+    const modelA = allModels.find(m => m.id === selectModelA.value);
+    const modelB = allModels.find(m => m.id === selectModelB.value);
+
+    if (!modelA || !modelB) {
+      compResultsEl.innerHTML = '<div class="preview-title">Select two models to compare</div>';
+      return;
+    }
+
+    const costA = calculateCost(modelA, promptTokens, outputTokens, useCache);
+    const costB = calculateCost(modelB, promptTokens, outputTokens, useCache);
+
+    let ratioText = '';
+    if (costA !== null && costB !== null && costA > 0 && costB > 0) {
+      const diff = Math.abs(costA - costB);
+      if (costA > costB) {
+        const pct = (((costA - costB) / costA) * 100).toFixed(1);
+        ratioText = `<span class="savings-tag">Model B (${modelB.name}) is ${pct}% cheaper (saves ${formatCurrency(diff)} per request)</span>`;
+      } else if (costB > costA) {
+        const pct = (((costB - costA) / costB) * 100).toFixed(1);
+        ratioText = `<span class="expensive-tag">Model A (${modelA.name}) is ${pct}% cheaper (saves ${formatCurrency(diff)} per request)</span>`;
+      } else {
+        ratioText = `<span>Both models have identical estimated cost</span>`;
+      }
+    }
+
+    compResultsEl.innerHTML = `
+      <div class="comp-grid">
+        <div class="comp-col">
+          <div class="comp-header">
+            <div>
+              <span class="provider-badge ${modelA.providerKey}">${modelA.providerName}</span>
+              <div class="comp-model-name">${modelA.name}</div>
+            </div>
+            <span class="category-tag">${modelA.category || 'general'}</span>
+          </div>
+          <div class="price-details">
+            <div class="price-row"><span class="label">Context:</span><span class="value">${formatContext(modelA.contextWindow)}</span></div>
+            <div class="price-row"><span class="label">Input / 1M:</span><span class="value">${formatRate(modelA.input)}</span></div>
+            <div class="price-row"><span class="label">Cached / 1M:</span><span class="value" style="color: #34d399;">${modelA.cachedInput !== undefined ? formatRate(modelA.cachedInput) : '-'}</span></div>
+            <div class="price-row"><span class="label">Output / 1M:</span><span class="value">${formatRate(modelA.output)}</span></div>
+          </div>
+          <div class="card-calc-result">
+            <span class="calc-total-label">Est. Request Cost:</span>
+            <span class="calc-total-value">${formatCurrency(costA)}</span>
+          </div>
+        </div>
+
+        <div class="comp-col">
+          <div class="comp-header">
+            <div>
+              <span class="provider-badge ${modelB.providerKey}">${modelB.providerName}</span>
+              <div class="comp-model-name">${modelB.name}</div>
+            </div>
+            <span class="category-tag">${modelB.category || 'general'}</span>
+          </div>
+          <div class="price-details">
+            <div class="price-row"><span class="label">Context:</span><span class="value">${formatContext(modelB.contextWindow)}</span></div>
+            <div class="price-row"><span class="label">Input / 1M:</span><span class="value">${formatRate(modelB.input)}</span></div>
+            <div class="price-row"><span class="label">Cached / 1M:</span><span class="value" style="color: #34d399;">${modelB.cachedInput !== undefined ? formatRate(modelB.cachedInput) : '-'}</span></div>
+            <div class="price-row"><span class="label">Output / 1M:</span><span class="value">${formatRate(modelB.output)}</span></div>
+          </div>
+          <div class="card-calc-result">
+            <span class="calc-total-label">Est. Request Cost:</span>
+            <span class="calc-total-value">${formatCurrency(costB)}</span>
+          </div>
+        </div>
+      </div>
+
+      ${ratioText ? `<div class="comp-summary-box"><span>Cost Comparison Summary:</span> ${ratioText}</div>` : ''}
+    `;
   }
 
   // Initial rendering

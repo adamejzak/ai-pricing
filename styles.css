@@ -244,6 +244,100 @@ body {
   padding: 14px 18px;
 }
 
+/* Comparator Styles */
+.comparator-card {
+  margin-bottom: 32px;
+}
+
+.comparator-selects {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.comparator-selects .input-group {
+  flex: 1;
+}
+
+.select-model {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-model:focus {
+  border-color: #ffffff;
+}
+
+.vs-badge {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  padding-top: 18px;
+}
+
+.comparator-results {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+
+.comp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.comp-col {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+
+.comp-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.comp-model-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.comp-summary-box {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.savings-tag {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.expensive-tag {
+  color: #ef4444;
+  font-weight: 700;
+}
+
 .preview-title {
   font-size: 0.75rem;
   text-transform: uppercase;

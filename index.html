@@ -82,6 +82,38 @@
       </div>
     </section>
 
+    <!-- Model Comparator Section -->
+    <section class="calculator-card comparator-card">
+      <div class="calculator-header">
+        <div class="header-title">
+          <div class="calc-icon">[VS]</div>
+          <div>
+            <h2>Side-by-Side Model Comparator</h2>
+            <p>Directly compare pricing, context limits, and cost ratio between two models.</p>
+          </div>
+        </div>
+        <button id="toggle-comparator-btn" class="btn-toggle-calc">[-] Hide</button>
+      </div>
+
+      <div id="comparator-body">
+        <div class="comparator-selects">
+          <div class="input-group">
+            <label for="select-model-a">Model A (Baseline)</label>
+            <select id="select-model-a" class="select-model"></select>
+          </div>
+          <div class="vs-badge">VS</div>
+          <div class="input-group">
+            <label for="select-model-b">Model B (Comparison)</label>
+            <select id="select-model-b" class="select-model"></select>
+          </div>
+        </div>
+
+        <div class="comparator-results" id="comparator-results">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
     <!-- Filter & Search Controls -->
     <section class="controls-section">
       <div class="search-box">
