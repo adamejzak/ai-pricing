@@ -11,6 +11,7 @@ Explore and compare AI API pricing in real time on the live interactive web dash
 
 Features:
 - **Collapsible Token Cost Calculator**: Enter custom input/output token amounts to compare exact request costs across models.
+- **Side-by-Side Model Comparator**: Select any two models (e.g. GPT-4o vs Gemini 3.1 Pro or Claude 3.7) to compare pricing, context windows, and calculate exact percentage savings per request.
 - **Provider & Category Filters**: Filter by OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral, and Kimi.
 - **Grid & Table Views**: View side-by-side pricing, context window limits, and cached prompt discounts.
 - **Local offline support**: You can also open [`index.html`](index.html) directly in your browser.
