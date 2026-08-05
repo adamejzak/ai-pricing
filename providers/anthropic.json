@@ -1,0 +1,44 @@
+{
+  "provider": "Anthropic",
+  "currency": "USD",
+  "unit": "per 1M tokens",
+  "updatedAt": "2026-08-05",
+  "models": {
+    "claude-fable-5": {
+      "name": "Claude Fable 5",
+      "category": "flagship",
+      "input": 10.0,
+      "cachedInput": 1.0,
+      "output": 50.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 1000000
+    },
+    "claude-opus-5": {
+      "name": "Claude Opus 5",
+      "category": "flagship",
+      "input": 5.0,
+      "cachedInput": 0.5,
+      "output": 25.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 1000000
+    },
+    "claude-sonnet-5": {
+      "name": "Claude Sonnet 5",
+      "category": "general",
+      "input": 2.0,
+      "cachedInput": 0.2,
+      "output": 10.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 1000000
+    },
+    "claude-haiku-4-5": {
+      "name": "Claude Haiku 4.5",
+      "category": "fast",
+      "input": 1.0,
+      "cachedInput": 0.1,
+      "output": 5.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 200000
+    }
+  }
+}

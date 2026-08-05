@@ -1,51 +1,97 @@
-# OpenAI Pricing
+# Universal AI Model API Pricing Hub
 
-Up-to-date pricing structure for OpenAI APIs as of **July 30, 2026**.
+Machine-readable pricing data and an interactive cost calculator for major AI APIs. The dataset was audited against first-party provider documentation on **August 5, 2026**.
 
-This repository provides structured JSON data (`pricing.json`) for OpenAI model costs to help developers estimate API usage costs within their applications.
+The repository tracks 55 current pay-as-you-go API entries from **OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral AI, and Kimi**. Token-priced models use USD per 1 million tokens; audio, transcription, speech, image, and other specialist models retain their official billing unit.
 
-Pricing source information is sourced from official OpenAI API documentation: [https://openai.com/api/pricing](https://openai.com/api/pricing)
+## Interactive dashboard
 
----
+Open [`index.html`](index.html) directly or serve the repository with any static web server. The dashboard provides:
 
-## 📅 Status (as of 30.07.2026)
+- request-cost estimates from input and output token counts for token-priced models;
+- optional cached-input pricing;
+- provider, category, and search filters;
+- grid and table views with model context windows.
 
-All retired and deprecated legacy endpoints (such as `o1-mini`, `gpt-4.5-preview`, `davinci-002`, `babbage-002`) have been removed.
+When `pricing.json` cannot be fetched under the local `file://` protocol, the page uses an equivalent fallback dataset embedded in `app.js`.
 
-### Supported & Available Model Families
+## Current model comparison
 
-- **GPT-5.6 Series (July 2026 Flagships)**:
-  - `gpt-5.6-sol` - Flagship reasoning & coding workhorse ($5.00 / 1M input, $30.00 / 1M output)
-  - `gpt-5.6-terra` - Balanced production model ($2.00 / 1M input, $12.00 / 1M output)
-  - `gpt-5.6-luna` - Fast & low-latency tier ($0.20 / 1M input, $1.20 / 1M output)
-- **GPT-5.5 & GPT-5.4 Series**:
-  - `gpt-5.5`, `gpt-5.5-pro`
-  - `gpt-5.4`, `gpt-5.4-pro`, `gpt-5.4-mini`, `gpt-5.4-nano`
-- **GPT-5 Series**:
-  - `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-5-chat-latest`
-- **GPT-4.1 & GPT-4o Series**:
-  - `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`
-  - `gpt-4o`, `gpt-4o-mini`, `chatgpt-4o-latest`, `gpt-4o-2024-08-06`, `gpt-4o-mini-2024-07-18`
-- **Reasoning Models (o-series)**:
-  - `o1`, `o1-pro`, `o3`, `o3-pro`, `o3-mini`, `o3-deep-research`, `o4-mini-deep-research`
-- **Realtime & Audio APIs**:
-  - `gpt-realtime-2.1`, `gpt-realtime-2.1-mini`
-  - Text & Audio token tiers
-- **Image & Video APIs**:
-  - `gpt-image-2`, `gpt-image-1`
-  - `sora-2`, `sora-2-pro` (per-second billing; API sunset September 24, 2026)
-- **Embeddings & Audio**:
-  - `text-embedding-3-small`, `text-embedding-3-large`, `whisper`, `tts`, `tts-hd`
+Standard first-party API rates in USD per 1 million tokens:
 
----
+| Provider | Model ID | Category | Context window | Input | Cached input | Output |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: |
+| OpenAI | `gpt-5.6-sol` | Flagship | 1.05M | $5.00 | $0.50 | $30.00 |
+| OpenAI | `gpt-5.6-terra` | General | 1.05M | $2.00 | $0.20 | $12.00 |
+| OpenAI | `gpt-5.6-luna` | Fast | 1.05M | $0.20 | $0.02 | $1.20 |
+| OpenAI | `gpt-4o-mini` | Fast | 128k | $0.15 | $0.075 | $0.60 |
+| Anthropic | `claude-fable-5` | Flagship | 1M | $10.00 | $1.00 | $50.00 |
+| Anthropic | `claude-opus-5` | Flagship | 1M | $5.00 | $0.50 | $25.00 |
+| Anthropic | `claude-sonnet-5` | General | 1M | $2.00 | $0.20 | $10.00 |
+| Google | `gemini-3.1-pro-preview` | Flagship preview | 1,048,576 | $2.00 | $0.20 | $12.00 |
+| Google | `gemini-3.6-flash` | Fast | 1,048,576 | $1.50 | $0.15 | $7.50 |
+| DeepSeek | `deepseek-v4-pro` | Flagship | 1M | $0.435 | $0.003625 | $0.87 |
+| DeepSeek | `deepseek-v4-flash` | Fast | 1M | $0.14 | $0.0028 | $0.28 |
+| Mistral | `mistral-medium-latest` | Flagship | 256k | $1.50 | $0.15 | $7.50 |
+| Mistral | `mistral-large-latest` | Flagship | 256k | $0.50 | $0.05 | $1.50 |
+| Kimi | `kimi-k3` | Flagship | 1M | $3.00 | $0.30 | $15.00 |
 
-## 🛠️ Data Structure (`pricing.json`)
+The table shows base rates. The dashboard calculator and JSON metadata also apply these published long-context tiers:
 
-- `models`: Input, cached input, output token costs per 1M tokens ($ USD) and `batchDiscount`.
-- `flex-processing`: Discounted token rates for Flex capacity processing.
-- `priority-processing`: High-throughput / priority queue token rates.
-- `audio-tokens`: Input and output rates for audio token processing in Realtime/Audio APIs.
-- `image-tokens`: Token pricing for image inputs/outputs.
-- `tools`: Service costs (Code Interpreter, File Search, Web Search per 1k calls).
-- `embedding` / `embedding-batch`: Standard and batch rates for embedding models.
-- `video`: Per-second generation rates for Sora 2 tiers.
+- OpenAI requests to GPT-5.6, GPT-5.5, GPT-5.4, and GPT-5.4 Pro with more than 272k input tokens use the provider's long-context multiplier: 2× input and 1.5× output for the full request.
+- The Gemini 3.1 Pro Preview rates shown above apply to prompts up to 200k tokens. Above 200k, the rates are $4.00 input, $0.40 cached input, and $18.00 output.
+- Claude Sonnet 5 uses introductory $2.00/$10.00 input/output pricing through August 31, 2026; Anthropic lists $3.00/$15.00 from September 1, 2026.
+- Cached-input fields represent cache reads/hits. Provider-specific cache-write and cache-storage charges are not included.
+
+The JSON catalog includes active general-purpose and specialist endpoints where official rates are published. Models billed by minute, character, image, audio token, or another unit expose that unit explicitly and are not forced into a misleading text-token calculation. Regional uplifts, tools, fine-tuning, and provisioned-capacity products remain outside this calculator's scope.
+
+## Repository data
+
+- [`pricing.json`](pricing.json) — combined dataset for all six providers.
+- [`providers/openai.json`](providers/openai.json) — current OpenAI frontier, GPT-4o mini/GPT-4.1/GPT-5/o3 families, Realtime, Audio, TTS, image, transcription, and Whisper endpoints.
+- [`providers/anthropic.json`](providers/anthropic.json) — Claude Fable 5, Opus 5, Sonnet 5, and Haiku 4.5.
+- [`providers/gemini.json`](providers/gemini.json) — current Gemini 3.x Pro, Flash, and Flash-Lite endpoints.
+- [`providers/deepseek.json`](providers/deepseek.json) — DeepSeek V4 Pro and V4 Flash.
+- [`providers/mistral.json`](providers/mistral.json) — current Mistral general-purpose, code, and Ministral models.
+- [`providers/kimi.json`](providers/kimi.json) — Kimi K3, K2.7 Code, and K2.6.
+
+Every provider file contains `currency`, `unit`, `updatedAt`, and a `models` object. Each model provides `name`, `category`, `input`, optional `cachedInput`, `output`, and `contextWindow`; models with tiered pricing also include `longContext*` metadata.
+
+## Official sources
+
+- [OpenAI model catalog and pricing](https://developers.openai.com/api/docs/models/all)
+- [Anthropic model overview](https://platform.claude.com/docs/en/about-claude/models/overview) and [Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
+- [Gemini models](https://ai.google.dev/gemini-api/docs/models), [pricing](https://ai.google.dev/gemini-api/docs/pricing), and [deprecations](https://ai.google.dev/gemini-api/docs/deprecations)
+- [DeepSeek models and pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [Mistral model overview](https://docs.mistral.ai/models/overview) and [API pricing](https://mistral.ai/pricing/api/)
+- [Kimi API platform pricing](https://platform.kimi.ai/)
+
+## Usage examples
+
+### JavaScript / Node.js
+
+```javascript
+const response = await fetch(
+  'https://raw.githubusercontent.com/adamejzak/openai-pricing/main/pricing.json'
+);
+const data = await response.json();
+
+const kimiK3 = data.providers.kimi.models['kimi-k3'];
+console.log(`Kimi K3 input: $${kimiK3.input} / 1M tokens`);
+```
+
+### Python
+
+```python
+import requests
+
+url = "https://raw.githubusercontent.com/adamejzak/openai-pricing/main/pricing.json"
+data = requests.get(url).json()
+
+deepseek_v4 = data["providers"]["deepseek"]["models"]["deepseek-v4-pro"]
+print(f"DeepSeek V4 Pro output: ${deepseek_v4['output']} / 1M tokens")
+```
+
+## License
+
+MIT License. See [`LICENSE`](LICENSE).

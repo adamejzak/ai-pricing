@@ -1,0 +1,48 @@
+{
+  "provider": "DeepSeek",
+  "currency": "USD",
+  "unit": "per 1M tokens",
+  "updatedAt": "2026-08-05",
+  "models": {
+    "deepseek-v4-pro": {
+      "name": "DeepSeek V4 Pro",
+      "category": "flagship",
+      "input": 0.435,
+      "cachedInput": 0.003625,
+      "output": 0.87,
+      "contextWindow": 1000000
+    },
+    "deepseek-v4-flash": {
+      "name": "DeepSeek V4 Flash",
+      "category": "fast",
+      "input": 0.14,
+      "cachedInput": 0.0028,
+      "output": 0.28,
+      "contextWindow": 1000000
+    },
+    "deepseek-v3": {
+      "name": "DeepSeek V3 (deepseek-chat)",
+      "category": "general",
+      "input": 0.14,
+      "cachedInput": 0.014,
+      "output": 0.28,
+      "contextWindow": 64000
+    },
+    "deepseek-r1": {
+      "name": "DeepSeek R1 (deepseek-reasoner)",
+      "category": "reasoning",
+      "input": 0.55,
+      "cachedInput": 0.14,
+      "output": 2.19,
+      "contextWindow": 64000
+    },
+    "deepseek-coder": {
+      "name": "DeepSeek Coder",
+      "category": "code",
+      "input": 0.14,
+      "cachedInput": 0.014,
+      "output": 0.28,
+      "contextWindow": 64000
+    }
+  }
+}

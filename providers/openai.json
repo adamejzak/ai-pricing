@@ -1,0 +1,368 @@
+{
+  "provider": "OpenAI",
+  "currency": "USD",
+  "unit": "mixed: per 1M tokens, minute, or 1K characters",
+  "updatedAt": "2026-08-05",
+  "models": {
+    "gpt-5.6-sol": {
+      "name": "GPT-5.6 Sol",
+      "category": "flagship",
+      "input": 5.0,
+      "cachedInput": 0.5,
+      "output": 30.0,
+      "batchDiscount": 0.5,
+      "longContextThreshold": 272000,
+      "longContextInputMultiplier": 2.0,
+      "longContextOutputMultiplier": 1.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.6-terra": {
+      "name": "GPT-5.6 Terra",
+      "category": "general",
+      "input": 2.0,
+      "cachedInput": 0.2,
+      "output": 12.0,
+      "batchDiscount": 0.5,
+      "longContextThreshold": 272000,
+      "longContextInputMultiplier": 2.0,
+      "longContextOutputMultiplier": 1.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.6-luna": {
+      "name": "GPT-5.6 Luna",
+      "category": "fast",
+      "input": 0.2,
+      "cachedInput": 0.02,
+      "output": 1.2,
+      "batchDiscount": 0.5,
+      "longContextThreshold": 272000,
+      "longContextInputMultiplier": 2.0,
+      "longContextOutputMultiplier": 1.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.5": {
+      "name": "GPT-5.5",
+      "category": "flagship",
+      "input": 5.0,
+      "cachedInput": 0.5,
+      "output": 30.0,
+      "batchDiscount": 0.5,
+      "longContextThreshold": 272000,
+      "longContextInputMultiplier": 2.0,
+      "longContextOutputMultiplier": 1.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.5-pro": {
+      "name": "GPT-5.5 Pro",
+      "category": "flagship",
+      "input": 30.0,
+      "output": 180.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.4": {
+      "name": "GPT-5.4",
+      "category": "general",
+      "input": 2.5,
+      "cachedInput": 0.25,
+      "output": 15.0,
+      "batchDiscount": 0.5,
+      "longContextThreshold": 272000,
+      "longContextInputMultiplier": 2.0,
+      "longContextOutputMultiplier": 1.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.4-pro": {
+      "name": "GPT-5.4 Pro",
+      "category": "flagship",
+      "input": 30.0,
+      "output": 180.0,
+      "batchDiscount": 0.5,
+      "longContextThreshold": 272000,
+      "longContextInputMultiplier": 2.0,
+      "longContextOutputMultiplier": 1.5,
+      "contextWindow": 1050000
+    },
+    "gpt-5.4-mini": {
+      "name": "GPT-5.4 Mini",
+      "category": "fast",
+      "input": 0.75,
+      "cachedInput": 0.075,
+      "output": 4.5,
+      "batchDiscount": 0.5,
+      "contextWindow": 400000
+    },
+    "gpt-5.4-nano": {
+      "name": "GPT-5.4 Nano",
+      "category": "fast",
+      "input": 0.2,
+      "cachedInput": 0.02,
+      "output": 1.25,
+      "batchDiscount": 0.5,
+      "contextWindow": 400000
+    },
+    "gpt-4o": {
+      "name": "GPT-4o",
+      "category": "general",
+      "input": 2.5,
+      "cachedInput": 1.25,
+      "output": 10.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 128000
+    },
+    "gpt-4o-mini": {
+      "name": "GPT-4o mini",
+      "category": "fast",
+      "input": 0.15,
+      "cachedInput": 0.075,
+      "output": 0.6,
+      "batchDiscount": 0.5,
+      "contextWindow": 128000
+    },
+    "o1": {
+      "name": "o1",
+      "category": "reasoning",
+      "input": 15.0,
+      "cachedInput": 7.5,
+      "output": 60.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 200000
+    },
+    "o1-pro": {
+      "name": "o1-pro",
+      "category": "reasoning",
+      "input": 150.0,
+      "output": 600.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 200000
+    },
+    "o3": {
+      "name": "o3",
+      "category": "reasoning",
+      "input": 2.0,
+      "cachedInput": 0.5,
+      "output": 8.0,
+      "batchDiscount": 0.5,
+      "contextWindow": 200000
+    },
+    "o3-pro": {
+      "name": "o3-pro",
+      "category": "reasoning",
+      "input": 20.0,
+      "output": 80.0,
+      "contextWindow": 200000
+    },
+    "o3-mini": {
+      "name": "o3-mini",
+      "category": "reasoning",
+      "input": 1.1,
+      "cachedInput": 0.55,
+      "output": 4.4,
+      "batchDiscount": 0.5,
+      "contextWindow": 200000
+    },
+    "o4-mini": {
+      "name": "o4-mini",
+      "category": "reasoning",
+      "input": 1.1,
+      "cachedInput": 0.275,
+      "output": 4.4,
+      "batchDiscount": 0.5,
+      "contextWindow": 200000
+    },
+    "gpt-realtime-2.1": {
+      "name": "GPT-Realtime-2.1",
+      "category": "realtime",
+      "input": 4.0,
+      "cachedInput": 0.4,
+      "output": 24.0,
+      "audioInput": 32.0,
+      "audioCachedInput": 0.4,
+      "audioOutput": 64.0,
+      "imageInput": 5.0,
+      "imageCachedInput": 0.5,
+      "contextWindow": 128000
+    },
+    "gpt-realtime-2.1-mini": {
+      "name": "GPT-Realtime-2.1 mini",
+      "category": "realtime",
+      "input": 0.6,
+      "cachedInput": 0.06,
+      "output": 2.4,
+      "audioInput": 10.0,
+      "audioCachedInput": 0.3,
+      "audioOutput": 20.0,
+      "imageInput": 0.8,
+      "imageCachedInput": 0.08,
+      "contextWindow": 128000
+    },
+    "gpt-realtime-2": {
+      "name": "GPT-Realtime-2",
+      "category": "realtime",
+      "input": 4.0,
+      "cachedInput": 0.4,
+      "output": 24.0,
+      "audioInput": 32.0,
+      "audioCachedInput": 0.4,
+      "audioOutput": 64.0,
+      "imageInput": 5.0,
+      "imageCachedInput": 0.5,
+      "contextWindow": 128000
+    },
+    "gpt-realtime-1.5": {
+      "name": "GPT-Realtime-1.5",
+      "category": "realtime",
+      "input": 4.0,
+      "cachedInput": 0.4,
+      "output": 16.0,
+      "audioInput": 32.0,
+      "audioCachedInput": 0.4,
+      "audioOutput": 64.0,
+      "imageInput": 5.0,
+      "imageCachedInput": 0.5,
+      "contextWindow": 32000
+    },
+    "gpt-audio-1.5": {
+      "name": "GPT-Audio-1.5",
+      "category": "audio",
+      "input": 2.5,
+      "output": 10.0,
+      "audioInput": 32.0,
+      "audioOutput": 64.0,
+      "contextWindow": 128000
+    },
+    "gpt-4o-mini-tts": {
+      "name": "GPT-4o mini TTS",
+      "category": "audio",
+      "input": 0.6,
+      "audioOutput": 12.0,
+      "contextWindow": 2000
+    },
+    "gpt-image-2": {
+      "name": "GPT Image 2",
+      "category": "image",
+      "input": 5.0,
+      "cachedInput": 1.25,
+      "output": 30.0,
+      "imageInput": 8.0,
+      "imageCachedInput": 2.0,
+      "imageOutput": 30.0,
+      "contextWindow": 400000
+    },
+    "gpt-4o-transcribe": {
+      "name": "GPT-4o Transcribe",
+      "category": "transcription",
+      "input": 2.5,
+      "output": 10.0,
+      "pricePerMinute": 0.006,
+      "contextWindow": 128000
+    },
+    "gpt-4o-mini-transcribe": {
+      "name": "GPT-4o mini Transcribe",
+      "category": "transcription",
+      "input": 1.25,
+      "output": 5.0,
+      "pricePerMinute": 0.003,
+      "contextWindow": 128000
+    },
+    "gpt-transcribe": {
+      "name": "GPT Transcribe",
+      "category": "transcription",
+      "pricePerMinute": 0.0045,
+      "contextWindow": 0
+    },
+    "gpt-live-transcribe": {
+      "name": "GPT Live Transcribe",
+      "category": "transcription",
+      "pricePerMinute": 0.017,
+      "contextWindow": 0
+    },
+    "gpt-realtime-whisper": {
+      "name": "GPT-Realtime-Whisper",
+      "category": "transcription",
+      "pricePerMinute": 0.017,
+      "contextWindow": 0
+    },
+    "tts-1": {
+      "name": "TTS-1",
+      "category": "audio",
+      "pricePer1KCharacters": 0.015,
+      "contextWindow": 0
+    },
+    "tts-1-hd": {
+      "name": "TTS-1 HD",
+      "category": "audio",
+      "pricePer1KCharacters": 0.03,
+      "contextWindow": 0
+    },
+    "whisper-1": {
+      "name": "Whisper",
+      "category": "transcription",
+      "pricePerMinute": 0.006,
+      "contextWindow": 0
+    },
+    "gpt-4.1": {
+      "name": "GPT-4.1",
+      "category": "general",
+      "input": 2.0,
+      "cachedInput": 0.5,
+      "output": 8.0,
+      "contextWindow": 1047576
+    },
+    "gpt-4.1-mini": {
+      "name": "GPT-4.1 mini",
+      "category": "fast",
+      "input": 0.4,
+      "cachedInput": 0.1,
+      "output": 1.6,
+      "contextWindow": 1047576
+    },
+    "gpt-5": {
+      "name": "GPT-5",
+      "category": "reasoning",
+      "input": 1.25,
+      "cachedInput": 0.125,
+      "output": 10.0,
+      "contextWindow": 400000
+    },
+    "gpt-5-mini": {
+      "name": "GPT-5 mini",
+      "category": "reasoning",
+      "input": 0.25,
+      "cachedInput": 0.025,
+      "output": 2.0,
+      "contextWindow": 400000
+    },
+    "gpt-5.1": {
+      "name": "GPT-5.1",
+      "category": "reasoning",
+      "input": 1.25,
+      "cachedInput": 0.125,
+      "output": 10.0,
+      "contextWindow": 400000
+    },
+    "gpt-5.2": {
+      "name": "GPT-5.2",
+      "category": "reasoning",
+      "input": 1.75,
+      "cachedInput": 0.175,
+      "output": 14.0,
+      "contextWindow": 400000
+    },
+    "gpt-5.2-pro": {
+      "name": "GPT-5.2 Pro",
+      "category": "reasoning",
+      "input": 21.0,
+      "output": 168.0,
+      "contextWindow": 400000
+    },
+    "gpt-5.3-codex": {
+      "name": "GPT-5.3-Codex",
+      "category": "code",
+      "input": 1.75,
+      "cachedInput": 0.175,
+      "output": 14.0,
+      "contextWindow": 400000
+    }
+  }
+}
