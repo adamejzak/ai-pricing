@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universal AI API Pricing Hub | OpenAI, Anthropic, Gemini, DeepSeek, Mistral, Kimi</title>
-  <meta name="description" content="Up-to-date API pricing comparison and interactive token cost calculator for OpenAI, Anthropic Claude, Google Gemini, DeepSeek, Mistral, and Kimi models.">
+  <title>AI Model API Pricing Hub | OpenAI, Anthropic, Gemini, DeepSeek, Mistral, Kimi</title>
+  <meta name="description" content="Minimalist API pricing comparison and token cost calculator for OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral, and Kimi models.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app-container">
     <!-- Header -->
     <header class="header">
-      <div class="badge">Universal AI Pricing</div>
       <h1>AI Model API Pricing Hub</h1>
-      <p class="subtitle">Current API token costs, context windows, and an interactive calculator for OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral, and Kimi.</p>
+      <p class="subtitle">Token pricing, context limits, and cost calculator across OpenAI, Anthropic, Gemini, DeepSeek, Mistral, and Kimi.</p>
       
       <div class="header-stats">
         <div class="stat-card">
-          <span class="stat-label">Supported Providers</span>
-          <span class="stat-value">6 Major Providers</span>
+          <span class="stat-label">Providers:</span>
+          <span class="stat-value">6 Major Hubs</span>
         </div>
         <div class="stat-card">
-          <span class="stat-label">Last Updated</span>
+          <span class="stat-label">Updated:</span>
           <span class="stat-value">August 5, 2026</span>
         </div>
         <div class="stat-card">
-          <span class="stat-label">Currency</span>
+          <span class="stat-label">Unit:</span>
           <span class="stat-value">USD ($ / 1M Tokens)</span>
         </div>
       </div>
@@ -37,10 +36,10 @@
     <!-- Calculator Section -->
     <section class="calculator-card">
       <div class="calculator-header">
-        <div class="calc-icon">⚡</div>
+        <div class="calc-icon">[&gt;]</div>
         <div>
-          <h2>Interactive Token Cost Calculator</h2>
-          <p>Estimate and compare exact API request costs across all model providers in real-time.</p>
+          <h2>Token Cost Calculator</h2>
+          <p>Calculate and compare request costs across model providers.</p>
         </div>
       </div>
 
@@ -67,7 +66,7 @@
           <div class="toggle-group">
             <label class="checkbox-label">
               <input type="checkbox" id="use-cache">
-              <span>Use Cached Prompt (if supported)</span>
+              <span>Use Cached Prompt Rate</span>
             </label>
           </div>
         </div>
@@ -81,8 +80,8 @@
     <!-- Filter & Search Controls -->
     <section class="controls-section">
       <div class="search-box">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="search-input" placeholder="Search model (e.g. GPT-5.6, Claude 5, Gemini 3.6, DeepSeek V4, Kimi K3)...">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" placeholder="Filter models by name (e.g. GPT-5.6, Claude, Gemini, DeepSeek, Kimi)...">
       </div>
 
       <div class="filter-tabs" id="provider-tabs">
@@ -113,12 +112,8 @@
       <div class="view-toggle-bar">
         <span class="model-count" id="model-count">Showing models</span>
         <div class="toggle-buttons">
-          <button id="btn-grid-view" class="view-btn active" title="Grid View">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> Card Grid
-          </button>
-          <button id="btn-table-view" class="view-btn" title="Table View">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> Table
-          </button>
+          <button id="btn-grid-view" class="view-btn active" title="Grid View">Grid</button>
+          <button id="btn-table-view" class="view-btn" title="Table View">Table</button>
         </div>
       </div>
 
@@ -136,9 +131,9 @@
               <th>Category</th>
               <th>Context</th>
               <th>Input / 1M</th>
-              <th>Cached Input / 1M</th>
+              <th>Cached / 1M</th>
               <th>Output / 1M</th>
-              <th>Est. Query Cost</th>
+              <th>Est. Cost</th>
             </tr>
           </thead>
           <tbody id="table-body">
@@ -150,7 +145,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>Data audited August 5, 2026. Machine-readable prices are available in <a href="pricing.json" target="_blank">pricing.json</a> and the <a href="providers/" target="_blank">providers/</a> folder.</p>
+      <p>Raw data: <a href="pricing.json" target="_blank">pricing.json</a> | <a href="providers/" target="_blank">providers/</a> folder</p>
     </footer>
   </div>
 
