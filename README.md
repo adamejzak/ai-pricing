@@ -1,4 +1,4 @@
-# Universal AI Model API Pricing Hub
+# AI Model API Pricing
 
 Machine-readable pricing data and an interactive cost calculator for major AI APIs. The dataset was audited against first-party provider documentation on **September 30, 2026**.
 
@@ -34,6 +34,26 @@ Standard first-party API rates in USD per 1 million tokens:
 | Mistral | `mistral-medium-latest` | Flagship | 256k | $1.50 | $0.15 | $7.50 |
 | Mistral | `mistral-large-latest` | Flagship | 256k | $0.50 | $0.05 | $1.50 |
 | Kimi | `kimi-k3` | Flagship | 1M | $3.00 | $0.30 | $15.00 |
+
+## Generation comparisons
+
+Standard API list prices in USD per 1 million tokens. Each rate is shown as current / previous-generation model.
+
+### OpenAI: GPT-6 and GPT-5.6
+
+| Segment | GPT-6 family | GPT-5.6 family | Input | Cached input | Output |
+| :--- | :--- | :--- | ---: | ---: | ---: |
+| Flagship | `gpt-6-astra` | `gpt-5.6-sol` | $10.00 / $5.00 | $1.00 / $0.50 | $50.00 / $30.00 |
+| General | `gpt-6.1-sol` | `gpt-5.6-terra` | $2.00 / $2.00 | $0.10 / $0.20 | $10.00 / $12.00 |
+| Fast | `gpt-6-luna` | `gpt-5.6-luna` | $0.10 / $0.20 | $0.01 / $0.02 | $0.50 / $1.20 |
+
+### Anthropic: Claude 5.5 and Claude 5
+
+| Segment | Current model | Previous model | Input | Cached input | Output |
+| :--- | :--- | :--- | ---: | ---: | ---: |
+| Frontier | `claude-fable-5-1` | `claude-fable-5` | $10.00 / $10.00 | $0.25 / $1.00 | $50.00 / $50.00 |
+| Flagship | `claude-opus-5-5` | `claude-opus-5` | $4.00 / $5.00 | $0.20 / $0.50 | $20.00 / $25.00 |
+| General | `claude-sonnet-5-5` | `claude-sonnet-5` | $2.00 / $2.00 | $0.20 / $0.20 | $10.00 / $10.00 |
 
 The table shows base rates. The dashboard calculator and JSON metadata also apply these published long-context tiers:
 
