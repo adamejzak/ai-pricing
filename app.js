@@ -818,6 +818,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     pricingData = fallbackDataset;
   }
 
+  // Display the current production models before earlier generations.
+  // Models not listed here keep their catalog order after these entries.
+  const modelRecencyOrder = [
+    'gpt-6.1-sol',
+    'gpt-6-astra',
+    'gpt-6-luna',
+    'gpt-5.6-sol',
+    'gpt-5.6-terra',
+    'gpt-5.6-luna',
+    'claude-fable-5-1',
+    'claude-opus-5-5',
+    'claude-sonnet-5-5',
+    'claude-haiku-4-5-20251001',
+    'gemini-3.8-flash',
+    'gemini-3.7-flash',
+    'gemini-3.6-flash',
+    'deepseek-flash',
+    'deepseek-v4-pro',
+    'glm-5.3',
+    'kimi-k3'
+  ];
+  const modelRecencyRank = new Map(modelRecencyOrder.map((id, index) => [id, index]));
+
   // Flatten models array for easy filtering & calculation
   function getAllModels() {
     const list = [];
@@ -835,7 +858,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
       });
     });
-    return list;
+    return list.sort((a, b) => {
+      const aRank = modelRecencyRank.get(a.id) ?? Number.MAX_SAFE_INTEGER;
+      const bRank = modelRecencyRank.get(b.id) ?? Number.MAX_SAFE_INTEGER;
+      return aRank - bRank;
+    });
   }
 
   const allModels = getAllModels();
