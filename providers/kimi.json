@@ -2,22 +2,23 @@
   "provider": "Kimi",
   "currency": "USD",
   "unit": "per 1M tokens",
-  "updatedAt": "2026-08-05",
+  "updatedAt": "2026-09-30",
   "models": {
     "kimi-k3": {
       "name": "Kimi K3",
       "category": "flagship",
-      "input": 3.0,
+      "input": 3,
       "cachedInput": 0.3,
-      "output": 15.0,
-      "contextWindow": 1000000
+      "output": 15,
+      "contextWindow": 1000000,
+      "cacheWrite": 3
     },
     "kimi-k2.7-code": {
       "name": "Kimi K2.7 Code",
       "category": "code",
       "input": 0.95,
       "cachedInput": 0.19,
-      "output": 4.0,
+      "output": 4,
       "contextWindow": 256000
     },
     "kimi-k2.6": {
@@ -25,23 +26,23 @@
       "category": "general",
       "input": 0.95,
       "cachedInput": 0.16,
-      "output": 4.0,
+      "output": 4,
       "contextWindow": 256000
     },
     "kimi-k1.5": {
       "name": "Kimi K1.5",
       "category": "general",
-      "input": 0.80,
-      "cachedInput": 0.10,
-      "output": 3.0,
+      "input": 0.8,
+      "cachedInput": 0.1,
+      "output": 3,
       "contextWindow": 128000
     },
     "moonshot-v1-128k": {
       "name": "Moonshot V1 128k",
       "category": "general",
-      "input": 0.80,
-      "cachedInput": 0.10,
-      "output": 3.0,
+      "input": 0.8,
+      "cachedInput": 0.1,
+      "output": 3,
       "contextWindow": 128000
     },
     "moonshot-v1-32k": {

@@ -2,46 +2,47 @@
   "provider": "Google Gemini",
   "currency": "USD",
   "unit": "per 1M tokens",
-  "updatedAt": "2026-08-05",
+  "updatedAt": "2026-09-30",
   "models": {
     "gemini-3.1-pro": {
       "name": "Gemini 3.1 Pro",
       "category": "flagship",
-      "input": 2.0,
+      "input": 2,
       "cachedInput": 0.2,
-      "output": 12.0,
+      "output": 12,
       "longContextThreshold": 200000,
-      "longContextInput": 4.0,
+      "longContextInput": 4,
       "longContextCachedInput": 0.4,
-      "longContextOutput": 18.0,
+      "longContextOutput": 18,
       "contextWindow": 2097152
     },
     "gemini-3.1-pro-preview": {
       "name": "Gemini 3.1 Pro Preview",
       "category": "flagship",
-      "input": 2.0,
+      "input": 2,
       "cachedInput": 0.2,
-      "output": 12.0,
+      "output": 12,
       "longContextThreshold": 200000,
-      "longContextInput": 4.0,
+      "longContextInput": 4,
       "longContextCachedInput": 0.4,
-      "longContextOutput": 18.0,
+      "longContextOutput": 18,
       "contextWindow": 1048576
     },
     "gemini-3.6-flash": {
       "name": "Gemini 3.6 Flash",
       "category": "fast",
-      "input": 1.5,
-      "cachedInput": 0.15,
-      "output": 7.5,
-      "contextWindow": 1048576
+      "input": 0.75,
+      "cachedInput": 0.075,
+      "output": 3.75,
+      "contextWindow": 1048576,
+      "batchDiscount": 0.5
     },
     "gemini-3.5-flash": {
       "name": "Gemini 3.5 Flash",
       "category": "fast",
       "input": 1.5,
       "cachedInput": 0.15,
-      "output": 9.0,
+      "output": 9,
       "contextWindow": 1048576
     },
     "gemini-3.5-flash-lite": {
@@ -57,7 +58,7 @@
       "category": "fast",
       "input": 0.5,
       "cachedInput": 0.05,
-      "output": 3.0,
+      "output": 3,
       "contextWindow": 1048576
     },
     "gemini-3.1-flash-lite": {
@@ -73,11 +74,11 @@
       "category": "flagship",
       "input": 1.25,
       "cachedInput": 0.3,
-      "output": 10.0,
+      "output": 10,
       "longContextThreshold": 128000,
       "longContextInput": 2.5,
       "longContextCachedInput": 0.6,
-      "longContextOutput": 15.0,
+      "longContextOutput": 15,
       "contextWindow": 2000000
     },
     "gemini-2.5-flash": {
@@ -93,7 +94,7 @@
       "category": "general",
       "input": 1.25,
       "cachedInput": 0.3125,
-      "output": 5.0,
+      "output": 5,
       "contextWindow": 2000000
     },
     "gemini-2.0-flash": {
@@ -117,11 +118,11 @@
       "category": "general",
       "input": 1.25,
       "cachedInput": 0.3125,
-      "output": 5.0,
+      "output": 5,
       "longContextThreshold": 128000,
       "longContextInput": 2.5,
       "longContextCachedInput": 0.625,
-      "longContextOutput": 10.0,
+      "longContextOutput": 10,
       "contextWindow": 2000000
     },
     "gemini-1.5-flash": {
@@ -143,6 +144,24 @@
       "cachedInput": 0.01,
       "output": 0.15,
       "contextWindow": 1000000
+    },
+    "gemini-3.7-flash": {
+      "name": "Gemini 3.7 Flash",
+      "category": "fast",
+      "input": 0.75,
+      "cachedInput": 0.075,
+      "output": 3.75,
+      "batchDiscount": 0.5,
+      "contextWindow": 1048576
+    },
+    "gemini-3.8-flash": {
+      "name": "Gemini 3.8 Flash",
+      "category": "fast",
+      "input": 0.75,
+      "cachedInput": 0.075,
+      "output": 3.75,
+      "batchDiscount": 0.5,
+      "contextWindow": 1048576
     }
   }
 }

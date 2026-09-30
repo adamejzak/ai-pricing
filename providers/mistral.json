@@ -2,7 +2,7 @@
   "provider": "Mistral AI",
   "currency": "USD",
   "unit": "per 1M tokens",
-  "updatedAt": "2026-08-05",
+  "updatedAt": "2026-09-30",
   "models": {
     "mistral-medium-latest": {
       "name": "Mistral Medium 3.5",
@@ -39,8 +39,8 @@
     "pixtral-large-latest": {
       "name": "Pixtral Large 2411",
       "category": "vision",
-      "input": 2.0,
-      "output": 6.0,
+      "input": 2,
+      "output": 6,
       "contextWindow": 128000
     },
     "ministral-14b-latest": {
@@ -70,8 +70,8 @@
     "open-mixtral-8x22b": {
       "name": "Mixtral 8x22B",
       "category": "general",
-      "input": 2.0,
-      "output": 6.0,
+      "input": 2,
+      "output": 6,
       "contextWindow": 64000
     },
     "open-mixtral-8x7b": {
@@ -85,8 +85,15 @@
       "name": "Mistral Embed",
       "category": "embedding",
       "input": 0.1,
-      "output": 0.0,
+      "output": 0,
       "contextWindow": 8192
+    },
+    "glm-5.3": {
+      "name": "GLM 5.3",
+      "category": "code",
+      "input": 1.4,
+      "output": 4.4,
+      "contextWindow": 200000
     }
   }
 }
